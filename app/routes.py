@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 
 @app.route('/')
 @app.route('/index')
@@ -10,8 +10,11 @@ def index():
 def name(name):
     return f"Hello, {name}!"
 
-@app.route('/extract')
+@app.route('/extract',methods=['POST','GET'])
 def extract():
+    if request.method=='POST':
+        product_id = request.form.get('product_id')
+        return redirect(url_for('product',product_id=product_id))
     return render_template('extract.html')
 
 @app.route('/products')

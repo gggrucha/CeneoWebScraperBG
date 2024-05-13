@@ -27,20 +27,37 @@
       padding: 10px;
       margin-bottom: 20px;
     }
-    .navbar h1 {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 20px;
+    .navbar a {
+      padding: 10px 20px;
+      background-color:#fff;
+      color: blue
     }
-    .navbar h1:hover {
-      text-decoration: underline;
+    /* formularz */
+    .my-form {
+      max-width: 400px;
+      margin:0 auto;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #333;
+      
     }
     </style>
     <title>Ceneo Scraper</title>
 </head>
 <body> 
+    <h1>Ceneo.pl Scraper</h1>
     <header class="navbar">
-        <h1>Ceneo.pl Scraper</h1>
+        
+        <a href="{{url_for('index')}}">INDEX</a>
+        <a href="{{url_for('extract')}}">EXTRACT</a>
+        <a href="{{url_for('products')}}">Products</a>
+        <a href="{{url_for('about')}}">O autorze</a>
     </header>
     <section>
         {% block content %}
