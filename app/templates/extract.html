@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>Ekstrakcja opinii</h2>
+    {% if error is defined %}
+        <div>
+            <strong>Uwaga</strong>
+            <button>Button</button>
+        </div>
+    {% endif %}
     <form class="my-form" action="{{url_for('extract')}}" method="post">
         <label for="product_id">Id produktu</label>
         <input type="text" name="product_id" required>
