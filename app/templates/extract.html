@@ -7,9 +7,37 @@
             <button>Button</button>
         </div>
     {% endif %}
-    <form class="my-form" action="{{url_for('extract')}}" method="post">
-        <label for="product_id">Id produktu</label>
-        <input type="text" name="product_id" required>
-        <button type="submit">Button</button>
+    <form action="{{ url_for('extract') }}" class="my-form" method="post">
+        <div>
+            <div>
+                <label for="product_id">Kod produktu</label>
+            </div>
+
+            <div>
+                <input type="text" name="product_id" id="product_id" aria-describedby="idHelpInline" placeholder="Podaj kod produktu">
+            </div>
+            
+            <button type="submit">Pobierz opinię</button>
+        </div>
+        
     </form>
+
+
+    <!-- <form action="{{ url_for('extract') }}" method="post">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="product_id" class="col-form-label">Kod produktu</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" name="product_id" id="product_id" class="form-control" aria-describedby="idHelpInline" placeholder="Podaj kod produktu">
+            </div>
+            <div class="col-auto">
+                <span id="idHelpInline" class="form-text"> Kod produktu składa się z 8-10 cyfr.
+                </span>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-danger">Pobierz opinie</button>
+            </div>
+        </div>
+    </form> -->
 {% endblock %}

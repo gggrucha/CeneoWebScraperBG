@@ -12,7 +12,7 @@ selectors = {
     "purchase_date" : ("span.user-post__published > time:nth-child(2)","datetime")
 }
 
-def extract(ancestor,selector,attribute=None,return_list=False):
+def extract(ancestor,selector=None,attribute=None,return_list=False):
     if selector:
         if return_list:
             if attribute:
